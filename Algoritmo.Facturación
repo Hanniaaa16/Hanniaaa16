@@ -1,0 +1,49 @@
+Algoritmo sin_titulo
+	normal = 1000
+	suite = 3000
+	Repetir
+		Escribir "Bienvenido, ¿Cual es su nombre?"
+		leer nombre
+		Escribir "Hola " nombre " ¿Desea realizar el pago de su estadia por transferencia bancaria o en efectivo?"
+		leer respuesta
+		Si respuesta = "transferencia" Entonces
+			Escribir "¿Cuantas habitaciones reservó?"
+			leer num_habitaciones
+			Si num_habitaciones > 3 Entonces
+				Escribir "Por su preferencia y número de reservaciones usted recibe un desayuno diario gratis durante su estadia"
+			SiNo
+				Escribir "Esperamos que el hotel sea de su agrado y disfrute su estadía"
+			Fin Si
+			Escribir "¿De cuantos días sera su estadia?"
+			leer dias
+			Escribir "¿Que tipo de habitaciónes reservó normal o suite?"
+			leer tipo_habitación
+			Si tipo_habitación = "normal" Entonces
+				costo = normal * dias * num_habitaciones
+				IVA = costo * 0.16
+				Total = costo + IVA
+				Escribir "Su total a pagar por su estadia será " Total
+				Escribir "Favor de ingresar su número de cuenta"
+				leer num_cuenta
+				Escribir "La transferencia bancaria ha sido exitosa, lo esperamos pronto. Puede verificar su recibo de factura en nuestra pagina oficial https://Hotel_Paraiso_Paradisiaco.com"
+			SiNo
+				tipo_habitación = "suite" 
+				costo = suite * dias * num_habitaciones
+				IVA = costo * 0.16
+				Total = costo + IVA
+				Escribir "Su total a pagar por su estadia será " Total
+			Fin Si
+		SiNo
+			Escribir Nombre " Usted puede pasar a pagar personalmente el día de su reservación, lo esperamos" 
+			
+		Fin Si
+		Escribir "Si ya ha terminado su tramite, ¿Usted desa salir?"
+		leer respuesta_3
+		Si respuesta_3 = "si" Entonces
+			Escribir " Su tramite ha terminado exitosamente" 
+		SiNo
+			Escribir "Si no esta seguro, puede ingresar nuevamente sus datos y cancelar su transferencia"
+		Fin Si
+	Hasta Que respuesta_3 = "si"
+
+FinAlgoritmo
